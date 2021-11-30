@@ -21,16 +21,13 @@ namespace IS_2_19_KitaevDV
         {
             public string cost;
             public string year;
-            Form1 f1 = new Form1();
             public HWComponents()
             {
                 cost = "null";
                 year = "null";
             }
-            public virtual void Display()
-            {
-                f1.listBox1.Items.Add($"{cost}, {year}");
-            }
+            public abstract void Display(ListBox listBox1);
+            
         }
 
         class CPU: HWComponents
@@ -38,12 +35,9 @@ namespace IS_2_19_KitaevDV
             public string core;
             public string frequency;
             public string threads;
-            Form1 f1 = new Form1();
-            
-            public override void Display()
+            public override void Display(ListBox listBox1)
             {
-                f1.listBox1.Items.Add($"{cost}, {year}, {core}, {frequency}, {threads}");
-                f1.listBox1.Refresh();
+                listBox1.Items.Add($"{cost}, {year}, {core}, {frequency}, {threads}");
             }
         }
 
@@ -53,7 +47,11 @@ namespace IS_2_19_KitaevDV
             public string perfomance;
             public string VRam;
             Form1 f1 = new Form1();
-        }
+            public override void Display(ListBox listBox1)
+            {
+                listBox1.Items.Add($"{cost}, {year}, {core}, {frequency}, {threads}, {GPUfrequncy}, {perfomance}, {VRam}");
+            }
+    }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -63,7 +61,21 @@ namespace IS_2_19_KitaevDV
             cp.core = Convert.ToString(textBox3.Text);
             cp.frequency = Convert.ToString(textBox4.Text);
             cp.threads = Convert.ToString(textBox5.Text);
-            cp.Display();
+            cp.Display(listBox1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GPU cp = new GPU();
+            cp.cost = Convert.ToString(textBox1.Text);
+            cp.year = Convert.ToString(textBox2.Text);
+            cp.core = Convert.ToString(textBox3.Text);
+            cp.frequency = Convert.ToString(textBox4.Text);
+            cp.threads = Convert.ToString(textBox5.Text);
+            cp.GPUfrequncy = Convert.ToString(textBox6.Text);
+            cp.perfomance = Convert.ToString(textBox7.Text);
+            cp.VRam = Convert.ToString(textBox8.Text);
+            cp.Display(listBox1);
         }
     }
 }

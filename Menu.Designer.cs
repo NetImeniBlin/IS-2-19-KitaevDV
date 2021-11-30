@@ -35,7 +35,7 @@ namespace IS_2_19_KitaevDV
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(93, 54);
+            this.button1.Location = new System.Drawing.Point(125, 54);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
