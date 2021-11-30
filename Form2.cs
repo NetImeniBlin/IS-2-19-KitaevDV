@@ -33,7 +33,7 @@ namespace IS_2_19_KitaevDV
             }
             catch
             {
-                MessageBox.Show("nea");
+                
             }
             finally
             {
