@@ -34,5 +34,17 @@ namespace IS_2_19_KitaevDV
             Z3 z3 = new Z3();
             z3.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Z4 z4 = new Z4();
+            z4.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Z5 z5 = new Z5();
+            z5.ShowDialog();
+        }
     }
 }

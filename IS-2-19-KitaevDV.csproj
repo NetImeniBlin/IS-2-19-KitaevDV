@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Z4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Z4.Designer.cs">
+      <DependentUpon>Z4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Z5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Z5.Designer.cs">
+      <DependentUpon>Z5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Z1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Z4.resx">
+      <DependentUpon>Z4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Z5.resx">
+      <DependentUpon>Z5.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,6 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1\ClassLibrary1.csproj">
+      <Project>{43ba7bdc-3b27-410a-9eee-9b7a4b5d2692}</Project>
+      <Name>ClassLibrary1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
