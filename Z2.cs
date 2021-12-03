@@ -27,7 +27,17 @@ namespace IS_2_19_KitaevDV
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Нет проблем :U");
+                conn.Close();
+            }
+            catch (Exception osh)
+            {
+                MessageBox.Show("Проблема" + osh);
+                conn.Close();
+            }
         }
     }
 }
