@@ -1,7 +1,7 @@
 ﻿
 namespace IS_2_19_KitaevDV
 {
-    partial class Form3
+    partial class Z3
     {
         /// <summary>
         /// Required designer variable.

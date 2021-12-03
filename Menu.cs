@@ -19,13 +19,13 @@ namespace IS_2_19_KitaevDV
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 Form1 = new Form1();
+            Z1 Form1 = new Z1();
             Form1.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 Form2 = new Form2();
+            Z2 Form2 = new Z2();
             Form2.ShowDialog();
         }
     }

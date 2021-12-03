@@ -11,20 +11,23 @@ using MySql.Data.MySqlClient;
 
 namespace IS_2_19_KitaevDV
 {
-    public partial class Form3 : Form
+    public partial class Z2 : Form
     {
-        public Form3()
+        public Z2()
         {
             InitializeComponent();
         }
-
         MySqlConnection conn;
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
-             string connstr = "server=caseum.ru;port=33333;user=test_user;database=db_test;password=test_pass;";
-             conn = new MySqlConnection(connstr);
+            string connstr = "server=caseum.ru;port=33333;user=test_user;database=db_test;password=test_pass;";
+            conn = new MySqlConnection(connstr);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
