@@ -26,7 +26,25 @@ namespace IS_2_19_KitaevDV
             string fio = textBox1.Text;
             string time = textBox2.Text;
             string sql = $"INSERT INTO t_PraktStud (fioStud, datetimeStud)  VALUES ('{fio}','{time}');";
-            
+            int hm = 0;
+            try
+            {
+                connn.Open();
+                MySqlCommand command1 = new MySqlCommand(sql, connn);
+                hm = command1.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("так не получается");
+            }
+            finally
+            {
+                connn.Close();
+                if (hm != 0)
+                {
+                    MessageBox.Show("ну типо");
+                }
+            }
         }
     }
 }
