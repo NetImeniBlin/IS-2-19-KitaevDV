@@ -28,5 +28,11 @@ namespace IS_2_19_KitaevDV
             Z2 Form2 = new Z2();
             Form2.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Z3 z3 = new Z3();
+            z3.ShowDialog();
+        }
     }
 }
