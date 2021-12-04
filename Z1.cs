@@ -16,16 +16,18 @@ namespace IS_2_19_KitaevDV
         {
             InitializeComponent();
         }
-
+        //объявление класса коммлектующие
         abstract class HWComponents<o>
         {
             protected string cost;
             protected string year;
+            //объявление переменных через конструктор
             public HWComponents(string Cost, string Year)
             {
                 cost = Cost;
                 year = Year;
             }
+            //объявление метода
             public abstract void Display(ListBox listBox1);
             
         }
@@ -35,6 +37,7 @@ namespace IS_2_19_KitaevDV
             public string core1;
             public string frequency1;
             public string threads1;
+            //объявление переменных через конструктор
             public CPU(string Cost, string Year, string Core, string Frequency, string Threads)
                 :base(Cost, Year)
             {
@@ -42,9 +45,11 @@ namespace IS_2_19_KitaevDV
                 frequency = Frequency;
                 threads = Threads;
             }
+            
                   public string core { get { return core1; } set { core1= value;}}
                   public string frequency { get { return frequency1; } set { frequency1 = value; } }
                   public string threads { get { return threads1; } set { threads1 = value; } }
+            //переопределение метода
             public override void Display(ListBox listBox1)
             {
                 listBox1.Items.Add($"цена {cost}, год выпуска {year}, количество ядер {core}, частота {frequency}, количество потоков {threads}");
@@ -56,6 +61,7 @@ namespace IS_2_19_KitaevDV
             public string GPUfrequncy1;
             public string perfomance1;
             public string VRam1;
+            //объявление переменных через конструктор
             public GPU(string Cost, string Year, string gPUfrequncy, string Perfomance, string vRam)
                 :base(Cost, Year)
             {
@@ -66,6 +72,7 @@ namespace IS_2_19_KitaevDV
                   public string GPUfrequncy { get { return GPUfrequncy1; } set { GPUfrequncy1= value;}}
                   public string perfomance { get { return perfomance1; } set { perfomance1 = value; } }
                   public string VRam { get { return VRam1; } set { VRam1 = value; } }
+            //переопределение метода
             public override void Display(ListBox listBox1)
             {
                 listBox1.Items.Add($"цена {cost}, год выпуска {year}, частоа ГП {GPUfrequncy}, производительность {perfomance}, объём видео памяти {VRam}");

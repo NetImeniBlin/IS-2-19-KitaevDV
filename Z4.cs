@@ -21,41 +21,42 @@ namespace IS_2_19_KitaevDV
 
         private void Z4_Load(object sender, EventArgs e)
         {
+            //объявление переменной для подключения к бд
             Podklvkl conn = new Podklvkl();
             MySqlConnection connn = new MySqlConnection(conn.Vklpodkl);
+            //поля для вывода данных из бд
             string sql = $"SELECT idStud, fioStud, drStud FROM t_datetime";
+            //запрос на вывод данных в датагрид
             try
             {
                 connn.Open();
-                MessageBox.Show("Podkl");
+                MessageBox.Show("Подключение");
                 MySqlDataAdapter IDataAdapter = new MySqlDataAdapter(sql, connn);
                 DataSet dataset = new DataSet();
                 IDataAdapter.Fill(dataset);
                 dataGridView1.DataSource = dataset.Tables[0];
                 connn.Close();
             }
-            catch (Exception osh)
+            catch (Exception oi)
             {
-                MessageBox.Show("ProblemA" + osh);
+                MessageBox.Show("ProblemA" + oi);
                 connn.Close();
             }
         }
         string id_rows5 = "0";
+        //вывод данных в датагрид
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (!e.RowIndex.Equals(-1) && !e.ColumnIndex.Equals(-1) && e.Button.Equals(MouseButtons.Left))
             {
                 dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
-
                 dataGridView1.CurrentRow.Selected = true;
+                string row5;
+                row5 = dataGridView1.SelectedCells[0].RowIndex.ToString();
 
-                string index_rows5;
-
-                index_rows5 = dataGridView1.SelectedCells[0].RowIndex.ToString();
-
-                id_rows5 = dataGridView1.Rows[Convert.ToInt32(index_rows5)].Cells[2].Value.ToString();
+                id_rows5 = dataGridView1.Rows[Convert.ToInt32(row5)].Cells[2].Value.ToString();
                 DateTime x = DateTime.Today;
-                DateTime y = Convert.ToDateTime(dataGridView1.Rows[Convert.ToInt32(index_rows5)].Cells[2].Value.ToString());
+                DateTime y = Convert.ToDateTime(dataGridView1.Rows[Convert.ToInt32(row5)].Cells[2].Value.ToString());
                 string resultDays = (x - y).ToString();
                 MessageBox.Show("Со дня рождения прошло " + resultDays.Substring(0, resultDays.Length - 9) + " дней");
             }

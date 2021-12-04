@@ -27,6 +27,7 @@ namespace IS_2_19_KitaevDV
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //проверка соединения
             try
             {
                 conn.Open();

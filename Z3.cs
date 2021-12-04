@@ -22,10 +22,12 @@ namespace IS_2_19_KitaevDV
 
         private void Form3_Load(object sender, EventArgs e)
         {
-             
+             //объявление переменной для подключения к бд
              Program.Podkl conn = new Program.Podkl();
              MySqlConnection connn = new MySqlConnection(conn.Connstring);
+            //поля для вывода данных из бд
              string sql = $"SELECT id, fio, theme_kurs FROM t_stud";
+            //запрос на вывод данных
              try
              {
                  connn.Open();
@@ -43,16 +45,18 @@ namespace IS_2_19_KitaevDV
              }
 
         }
+        //вывод данных в датагрид
          string id_rows = "0";
+
          private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
          {
              if (!e.RowIndex.Equals(-1) && !e.ColumnIndex.Equals(-1) && e.Button.Equals(MouseButtons.Left))
              {
                  dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
                  dataGridView1.CurrentRow.Selected = true;
-                 string index_rows;
-                 index_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
-                 id_rows = dataGridView1.Rows[Convert.ToInt32(index_rows)].Cells[1].Value.ToString();
+                 string row;
+                 row = dataGridView1.SelectedCells[0].RowIndex.ToString();
+                 id_rows = dataGridView1.Rows[Convert.ToInt32(row)].Cells[1].Value.ToString();
                  MessageBox.Show(id_rows);
              }
          }

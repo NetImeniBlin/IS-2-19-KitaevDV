@@ -21,10 +21,12 @@ namespace IS_2_19_KitaevDV
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //объявления пременной для подключения к бд
             Podklvkl conn = new Podklvkl();
             MySqlConnection connn = new MySqlConnection(conn.Vklpodkl);
             string fio = textBox1.Text;
             string time = textBox2.Text;
+            //добавления данных в таблицу
             string sql = $"INSERT INTO t_PraktStud (fioStud, datetimeStud)  VALUES ('{fio}','{time}');";
             int hm = 0;
             try
@@ -35,6 +37,7 @@ namespace IS_2_19_KitaevDV
             }
             catch
             {
+                //ошибка в случае если время указано в не коректном формате
                 MessageBox.Show("так не получается");
             }
             finally
